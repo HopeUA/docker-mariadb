@@ -1,9 +1,9 @@
-FROM hope/base-alpine:3.3
+FROM hope/base-alpine:3.4
 
 MAINTAINER Sergey Sadovoi <sergey@hope.ua>
 
 ENV \
-    MARIADB_VERSION=10.1.12 \
+    MARIADB_VERSION=10.1.14 \
     # Set TERM env to avoid mysql client error message "TERM environment variable not set" when running from inside the container
     TERM=xterm \
     # Configuration variables
