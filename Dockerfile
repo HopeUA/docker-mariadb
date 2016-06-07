@@ -4,8 +4,10 @@ MAINTAINER Sergey Sadovoi <sergey@hope.ua>
 
 ENV \
     MARIADB_VERSION=10.1.14 \
+
     # Set TERM env to avoid mysql client error message "TERM environment variable not set" when running from inside the container
     TERM=xterm \
+
     # Configuration variables
     DB_max_allowed_packet=64M \
     DB_query_cache_size=0 \

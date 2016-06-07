@@ -1,0 +1,16 @@
+sut:
+  build: .
+  links:
+    - db
+  environment:
+    MARIADB_USER: user
+    MARIADB_PASS: pass
+    MARIADB_DATABASE: db
+  entrypoint: mysql -h db -u user -p pass -e "show databases;"
+
+db:
+  build: .
+  environment:
+    MARIADB_USER: user
+    MARIADB_PASS: pass
+    MARIADB_DATABASE: db
