@@ -25,7 +25,7 @@ COPY container-files/ /tmp/
 
 RUN \
     # Install and configure MariaDB
-    apk add --no-cache mariadb mariadb-client && \
+    apk add --no-cache mariadb mariadb-client pwgen && \
     echo "" >> /etc/mysql/my.cnf && \
     echo "!includedir /etc/mysql/my.cnf.d" >> /etc/mysql/my.cnf && \
     cp -rf /tmp/etc / && \
