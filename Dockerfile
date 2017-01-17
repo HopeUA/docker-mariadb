@@ -1,9 +1,9 @@
-FROM hope/base-alpine:3.4
+FROM hope/base-alpine:3.5
 
 MAINTAINER Sergey Sadovoi <sergey@hope.ua>
 
 ENV \
-    MARIADB_VERSION=10.1.14 \
+    MARIADB_VERSION=10.1.20 \
 
     # Set TERM env to avoid mysql client error message "TERM environment variable not set" when running from inside the container
     TERM=xterm \
@@ -13,6 +13,7 @@ ENV \
     DB_query_cache_size=0 \
     DB_query_cache_type=0 \
     DB_sync_binlog=0 \
+    DB_expire_logs_days=3 \
     DB_innodb_buffer_pool_size=768M \
     DB_innodb_log_file_size=128M \
     DB_innodb_flush_method=O_DIRECT \
@@ -21,7 +22,7 @@ ENV \
     DB_open_files_limit=4096 \
     DB_max_connections=300
 
-COPY container-files/ /tmp/
+COPY rootfs/ /tmp/
 
 RUN \
     # Install and configure MariaDB

@@ -34,6 +34,7 @@ query_cache_size  = DB_query_cache_size
 query_cache_type = DB_query_cache_type
 
 sync_binlog = DB_sync_binlog
+expire_logs_days = DB_expire_logs_days
 thread_cache_size = 16
 table_open_cache = 2048
 table_definition_cache = 1024
